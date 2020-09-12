@@ -1,0 +1,25 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-4">
+      <div class="list-group mx-2 my-2" id="list-tab" role="tablist">
+        <a *ngFor="let f of rxjsFunctions" style="overflow: hidden;"
+            class="list-group-item list-group-item-action px-2 font-weight-bold" id="list-{{ f.name }}-menu"
+            data-toggle="list" href="#list-{{ f.name }}" role="tab" aria-controls="">
+            {{ f.name }}
+        </a>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="tab-content mx-2" id="nav-tabContent">
+        <div *ngFor="let f of rxjsFunctions" class="tab-pane fade" id="list-{{ f.name }}"
+            role="tabpanel">
+          <p class="font-weight-normal">{{ f.description }}</p>
+          <hr/>
+          <div class="mt-2 border border-primary rounded">
+            <pre>{{ f.code }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
